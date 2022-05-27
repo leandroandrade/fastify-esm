@@ -1,0 +1,95 @@
+swagger: '2.0'
+info:
+  description: 'Sample documentation'
+  version: '1.0.0'
+  title: 'Sample'
+  contact:
+    email: 'leandro.andrade2588@gmail.com'
+host: 'localhost:3000'
+basePath: '/api'
+tags:
+  - name: 'Sample'
+    description: 'Sample services'
+schemes:
+  - 'http'
+paths:
+  '/sample':
+    get:
+      tags:
+        - Sample
+      summary: 'Sample service'
+      description: 'Sample description.'
+      produces:
+        - 'application/json'
+      parameters:
+        - in: 'query'
+          name: 'key'
+          description: 'Number of key'
+          type: 'integer'
+          required: false
+          default: 1
+      responses:
+        200:
+          description: 'The operation was completed successfully'
+          schema:
+            $ref: '#/definitions/ResponseSample'
+        400:
+          description: 'Validation errors'
+          schema:
+            $ref: '#/definitions/ResponseValidationError'
+        404:
+          description: 'Not found errors'
+          schema:
+            $ref: '#/definitions/ResponseNotfoundError'
+        500:
+          description: 'Internal server errors'
+          schema:
+            $ref: '#/definitions/ResponseServerError'
+
+definitions:
+  ResponseSample:
+    type: 'object'
+    properties:
+      key:
+        type: 'integer'
+        example: 1
+      today:
+        type: 'string'
+        example: 'June 2, 2009'
+  ResponseValidationError:
+    type: 'object'
+    properties:
+      code:
+        type: 'integer'
+        example: 400
+      message:
+        type: 'string'
+        example: 'Some invalid data!'
+      date:
+        type: 'string'
+        example: '2022-05-22T11:08:12.359Z'
+  ResponseNotfoundError:
+    type: 'object'
+    properties:
+      code:
+        type: 'integer'
+        example: 404
+      message:
+        type: 'string'
+        example: 'Data not found!'
+      date:
+        type: 'string'
+        example: '2022-05-19T11:08:12.359Z'
+  ResponseServerError:
+    type: 'object'
+    properties:
+      code:
+        type: 'integer'
+        example: 500
+      message:
+        type: 'string'
+        example: 'Internal server errors'
+      date:
+        type: 'string'
+        example: '2022-05-19T11:08:15.998Z'
+

@@ -1,0 +1,7 @@
+### GET sample message
+GET http://localhost:3000/api/sample
+Accept: application/json
+
+### GET sample message with query param
+GET http://localhost:3000/api/sample?key=200
+Accept: application/json

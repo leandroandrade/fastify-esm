@@ -1,0 +1,53 @@
+{
+  "name": "fastify-esm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test dotenv -e .env.test -- tap",
+    "dev": "nodemon",
+    "start": "node src/server.js"
+  },
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leandroandrade/fastify-esm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leandroandrade/fastify-esm/issues"
+  },
+  "homepage": "https://github.com/leandroandrade/fastify-esm#readme",
+  "dependencies": {
+    "@fastify/autoload": "^4.0.1",
+    "@fastify/swagger": "^6.0.1",
+    "fastify": "^3.29.0",
+    "fastify-plugin": "^3.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv-cli": "^5.1.0",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-security": "^1.5.0",
+    "nodemon": "^2.0.16",
+    "tap": "^16.2.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src/**"
+    ],
+    "ext": ".js",
+    "ignore": [
+      "node_modules"
+    ],
+    "exec": "cross-env NODE_ENV=development dotenv -e .env -- node src/server.js"
+  }
+}

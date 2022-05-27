@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    container_name: fastify-esm
+    depends_on:
+      - mongodb
+      - redis
+    ports:
+      - '8080:8080'
+    environment:
+      NODE_ENV: production
+      PORT: 8080
+    networks:
+      - support-net
+networks:
+  support-net:
+    driver: bridge
