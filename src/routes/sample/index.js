@@ -1,5 +1,5 @@
 import { getSampleSchema } from './schema.js';
-import { makeSampleController } from '../../../data/factories/make-sample-controller.js';
+import { makeSampleController } from '../../data/factories/make-sample-controller.js';
 
 export default async (fastify, opts) => {
     fastify.get('/', getSampleSchema, (req, reply) => {

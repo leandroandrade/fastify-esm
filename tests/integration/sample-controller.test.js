@@ -1,10 +1,12 @@
 import t from 'tap';
-import app from '../../src/configurations/app.js';
+import { buildApp } from '../shared/helper.js';
 
 const { test } = t;
 
 test('should return sample response', async t => {
-    const response = await app.inject({
+    const fastify = buildApp(t);
+
+    const response = await fastify.inject({
         method: 'GET',
         url: '/api/sample',
     });
