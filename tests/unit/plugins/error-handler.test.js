@@ -31,6 +31,6 @@ test('should format date with locale string', async t => {
     t.strictSame(response.json(), {
         statusCode: 400,
         error: 'Bad Request',
-        message: 'params.message should NOT be longer than 2 characters',
+        message: 'params/message must NOT have more than 2 characters',
     });
 });
