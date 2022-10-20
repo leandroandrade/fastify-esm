@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "test": "cross-env NODE_ENV=test dotenv -e .env.test -- tap",
+    "test": "cross-env NODE_ENV=test dotenv -e .env.test -- tap --no-cov",
+    "test:coverage": "cross-env NODE_ENV=test dotenv -e .env.test -- tap --coverage",
     "dev": "nodemon",
     "start": "node src/server.js"
   },
@@ -23,15 +24,16 @@
   },
   "homepage": "https://github.com/leandroandrade/fastify-esm#readme",
   "dependencies": {
-    "@fastify/autoload": "^5.4.0",
-    "@fastify/swagger": "^7.6.0",
-    "fastify": "^4.6.0",
-    "fastify-plugin": "^4.2.1"
+    "@fastify/autoload": "^5.4.1",
+    "@fastify/swagger": "^8.0.0",
+    "@fastify/swagger-ui": "^1.1.0",
+    "fastify": "^4.9.2",
+    "fastify-plugin": "^4.3.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
     "dotenv-cli": "^6.0.0",
-    "eslint": "^8.23.1",
+    "eslint": "^8.25.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
