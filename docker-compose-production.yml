@@ -4,9 +4,6 @@ services:
   api:
     build: .
     container_name: fastify-esm
-    depends_on:
-      - mongodb
-      - redis
     ports:
       - '8080:8080'
     environment:
