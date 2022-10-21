@@ -5,13 +5,14 @@ export class SampleController {
     }
 
     async handle(req, reply) {
-        const { key } = req.query;
+        const { key, ids } = req.query;
 
         this.fastify.log.info('Sample logging...');
         const date = this.repository.getDateRepository(2022, 10, 25);
         return reply.send({
             key,
             today: this.fastify.dateFormat.toLocaleDate(date),
+            ids,
         });
     }
 }
