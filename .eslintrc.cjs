@@ -4,8 +4,8 @@ module.exports = {
         commonjs: true,
         es2021: true,
     },
-    extends: ['airbnb-base', 'prettier', 'plugin:security/recommended'],
-    plugins: ['prettier', 'security'],
+    extends: ['airbnb-base'],
+    plugins: ['security'],
     globals: {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -14,12 +14,6 @@ module.exports = {
         ecmaVersion: 11,
     },
     rules: {
-        'prettier/prettier': [
-            'error',
-            {
-                endOfLine: 'auto',
-            },
-        ],
         'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
         'no-unused-expressions': [2, { allowShortCircuit: true }],
         'no-return-await': 'off',
